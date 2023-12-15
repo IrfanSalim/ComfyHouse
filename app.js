@@ -36,7 +36,6 @@ class Products {
 //display products
 class UI {
     displayProducts(products) {
-        console.log(products);
         let result = "";
         products.forEach((product) => {
             result += `
@@ -71,10 +70,8 @@ class UI {
                     event.target.disabled = true;
                     //get product from products
                     let cartItem = { ...Storage.getProduct(id), quantity: 1 };
-                    console.log(cartItem);
                     //add product to the cart
                     cart = [...cart, cartItem];
-                    console.log(cart);
                     //save cart to local storage
                     Storage.saveCart(cart);
                     //set cart values
